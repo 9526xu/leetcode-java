@@ -18,18 +18,20 @@ public class SelectSort {
         }
 
         for (int i = 0; i < a.length; i++) {
-            int min = a[i];
+
             int index = i;
 
             for (int j = i + 1; j < a.length; j++) {
-                if (min > a[j]) {
-                    min = a[j];
+                if (a[index] > a[j]) {
                     index = j;
                 }
             }
 
-            a[index] = a[i];
-            a[i] = min;
+            int tmp = a[i];
+            a[i] = a[index];
+            a[index] = tmp;
+
+
         }
     }
 }
